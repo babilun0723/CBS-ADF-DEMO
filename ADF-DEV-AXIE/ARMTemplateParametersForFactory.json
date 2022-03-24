@@ -5,8 +5,11 @@
 		"factoryName": {
 			"value": "ADF-DEV-AXIE"
 		},
-		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
-			"value": "https://strgforadf01.blob.core.windows.net"
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "@linkedService().azstrg1"
+		},
+		"ls_azkv_1_properties_typeProperties_baseUrl": {
+			"value": "https://az-kv-np-axie.vault.azure.net/"
 		}
 	}
 }
