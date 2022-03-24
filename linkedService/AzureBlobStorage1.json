@@ -1,11 +1,26 @@
 {
 	"name": "AzureBlobStorage1",
 	"properties": {
+		"parameters": {
+			"ls_az——": {
+				"type": "string",
+				"defaultValue": "constr-az-strgforadf01"
+			}
+		},
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://strgforadf01.blob.core.windows.net",
-			"accountKind": "StorageV2"
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_azkv_1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": {
+					"value": "@linkedService().ls_az——",
+					"type": "Expression"
+				}
+			}
 		}
 	}
 }
