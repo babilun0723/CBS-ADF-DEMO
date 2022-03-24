@@ -1,12 +1,4 @@
 {
 	"name": "ADF-DEV-AXIE",
-	"properties": {
-		"globalParameters": {
-			"azStrgsecret": {
-				"type": "string",
-				"value": "constr-az-strgforadf01"
-			}
-		}
-	},
 	"location": "westus2"
 }
