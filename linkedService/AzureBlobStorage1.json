@@ -1,0 +1,11 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://strgforadf01.blob.core.windows.net",
+			"accountKind": "StorageV2"
+		}
+	}
+}
