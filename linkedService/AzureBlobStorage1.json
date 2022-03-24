@@ -2,7 +2,7 @@
 	"name": "AzureBlobStorage1",
 	"properties": {
 		"parameters": {
-			"azstrg1": {
+			"StorageAccountConStr": {
 				"type": "string",
 				"defaultValue": "constr-az-strgforadf01"
 			}
@@ -17,7 +17,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": {
-					"value": "@linkedService().azstrg1",
+					"value": "@linkedService().StorageAccountConStr",
 					"type": "Expression"
 				}
 			}
