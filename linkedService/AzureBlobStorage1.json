@@ -1,12 +1,6 @@
 {
 	"name": "AzureBlobStorage1",
 	"properties": {
-		"parameters": {
-			"StorageAccountConStr": {
-				"type": "string",
-				"defaultValue": "constr-az-strgforadf01"
-			}
-		},
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
@@ -16,10 +10,7 @@
 					"referenceName": "ls_azkv_1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": {
-					"value": "@linkedService().StorageAccountConStr",
-					"type": "Expression"
-				}
+				"secretName": "constr-az-strgforadf01"
 			}
 		}
 	}
