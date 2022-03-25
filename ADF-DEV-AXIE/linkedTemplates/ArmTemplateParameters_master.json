@@ -6,10 +6,13 @@
 			"value": "ADF-DEV-AXIE"
 		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
-			"value": "@linkedService().azstrg1"
+			"value": "constr-az-strgforadf01"
 		},
 		"ls_azkv_1_properties_typeProperties_baseUrl": {
 			"value": "https://az-kv-np-axie.vault.azure.net/"
+		},
+		"dataFactory_location": {
+			"value": "westus2"
 		},
 		"containerUri": {
 			"value": ""

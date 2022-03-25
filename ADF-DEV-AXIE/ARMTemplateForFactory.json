@@ -9,11 +9,15 @@
 		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
-			"defaultValue": "@linkedService().azstrg1"
+			"defaultValue": "constr-az-strgforadf01"
 		},
 		"ls_azkv_1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://az-kv-np-axie.vault.azure.net/"
+		},
+		"dataFactory_location": {
+			"type": "string",
+			"defaultValue": "westus2"
 		}
 	},
 	"variables": {
@@ -25,12 +29,6 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"parameters": {
-					"azstrg1": {
-						"type": "string",
-						"defaultValue": "constr-az-strgforadf01"
-					}
-				},
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
@@ -40,14 +38,12 @@
 							"referenceName": "ls_azkv_1",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": {
-							"value": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]",
-							"type": "Expression"
-						}
+						"secretName": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
 			"dependsOn": [
+				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/ls_azkv_1')]"
 			]
 		},
@@ -62,7 +58,17 @@
 					"baseUrl": "[parameters('ls_azkv_1_properties_typeProperties_baseUrl')]"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[variables('factoryId')]"
+			]
+		},
+		{
+			"name": "[parameters('factoryName')]",
+			"type": "Microsoft.DataFactory/factories",
+			"apiVersion": "2018-06-01",
+			"properties": {},
+			"dependsOn": [],
+			"location": "[parameters('dataFactory_location')]"
 		}
 	]
 }

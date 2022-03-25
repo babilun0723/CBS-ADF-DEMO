@@ -9,11 +9,15 @@
 		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
-			"defaultValue": "@linkedService().azstrg1"
+			"defaultValue": "constr-az-strgforadf01"
 		},
 		"ls_azkv_1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://az-kv-np-axie.vault.azure.net/"
+		},
+		"dataFactory_location": {
+			"type": "string",
+			"defaultValue": "westus2"
 		},
 		"containerUri": {
 			"type": "string",
@@ -41,6 +45,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"dataFactory_location": {
+						"value": "[parameters('dataFactory_location')]"
 					},
 					"ls_azkv_1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('ls_azkv_1_properties_typeProperties_baseUrl')]"
